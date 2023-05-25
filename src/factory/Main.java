@@ -2,12 +2,18 @@ package factory;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        VehiculeFactory vehicleFactory = new VehiculeFactory();
 
-        for (int i = 0; i < args.length; i++) {
-            System.out.print(args[i] + " ");
-        }
-        System.out.println();
+        Ivehicule voiture = vehicleFactory.createVehicle("VOITURE");
+        voiture.startEngine();
+        voiture.stopEngine();
+
+        Ivehicule moto = vehicleFactory.createVehicle("MOTO");
+        moto.startEngine();
+        moto.stopEngine();
+
+        Ivehicule camion = vehicleFactory.createVehicle("Camion");
+        camion.startEngine();
+        camion.stopEngine();
     }
 }
-
