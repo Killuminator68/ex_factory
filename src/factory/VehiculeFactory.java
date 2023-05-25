@@ -1,20 +1,23 @@
 package factory;
 
 public class VehiculeFactory {
-    public Ivehicule createVehicle(String vehicleType) {
-        if (vehicleType == null) {
+    public Ivehicule createVehicule(VehiculeType vehiculeType) {
+        if (vehiculeType == null) {
             return null;
         }
 
-        if (vehicleType.equalsIgnoreCase("VOITURE")) {
-            return new Voiture();
-        } else if (vehicleType.equalsIgnoreCase("MOTO")) {
-            return new Moto();
-        } else if (vehicleType.equalsIgnoreCase("CAMION")) {
-            return new Camion();
+        switch (vehiculeType) {
+            case VOITURE:
+                return new Voiture();
+            case MOTO:
+                return new Moto();
+            case CAMION:
+                return new Camion();
+            default:
+                return null;
         }
-
-        return null;
     }
 }
+
+
 

@@ -2,17 +2,17 @@ package factory;
 
 public class Main {
     public static void main(String[] args) {
-        VehiculeFactory vehicleFactory = new VehiculeFactory();
+        VehiculeFactory vehiculeFactory = new VehiculeFactory();
 
-        Ivehicule voiture = vehicleFactory.createVehicle("VOITURE");
+        Voiture voiture = (Voiture) vehiculeFactory.createVehicule(VehiculeType.VOITURE);
         voiture.startEngine();
         voiture.stopEngine();
 
-        Ivehicule moto = vehicleFactory.createVehicle("MOTO");
+        Moto moto = (Moto) vehiculeFactory.createVehicule(VehiculeType.MOTO);
         moto.startEngine();
         moto.stopEngine();
 
-        Ivehicule camion = vehicleFactory.createVehicle("Camion");
+        Camion camion = (Camion) vehiculeFactory.createVehicule(VehiculeType.MOTO);
         camion.startEngine();
         camion.stopEngine();
     }
